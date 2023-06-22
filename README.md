@@ -6,17 +6,25 @@ The chatbot has been deployed using Flask , Javascript and NLP.
 
 Clone repo adn create a virtual environment 
 
+$ git clone https://github.com/python-engineer/chatbot-deployment.git
+
+$ cd chatbot-deployment
+
+$ python3 -m venv venv
+
+$ . venv/bin/activate
+
 Install all requierd Packages(in virtual environment)
 
-pip install Flask torch torchvision nltk
+$ (venv) pip install Flask torch torchvision nltk
 
-python
+$ (venv) python
 >>> import nltk
 >>> nltk.download('punkt')
 
 # Run in virtual environment
-train.py
+$ (venv) train.py
 
-chat.py
+$ (venv) chat.py
 
 Running app.py would give you a responding Chatbot.

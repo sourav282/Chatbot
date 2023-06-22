@@ -39,6 +39,7 @@ class Chatbox {
   historyButton.addEventListener('click', () => {
     this.updateConversationHistory();
     this.showConversationHistory();
+    this.clearMessages();
   });
 
   speechButton.addEventListener('click', () => this.startSpeechRecognition());
@@ -129,12 +130,12 @@ class Chatbox {
   
         this.updateChatText(chatbox);
         this.updateConversationHistory();
-        this.clearMessages(); // Clear the messages after updating the history
+        //this.clearMessages(); // Clear the messages after updating the history
       })
       .catch((error) => {
         console.error('Error:', error);
         this.updateChatText(chatbox);
-        this.clearMessages(); // Clear the messages even if there is an error
+        //this.clearMessages(); // Clear the messages even if there is an error
       });
   }
   
@@ -164,7 +165,7 @@ class Chatbox {
   updateConversationHistory() {
     this.history = [...this.history, ...this.messages];
     localStorage.setItem('chatHistory', JSON.stringify(this.history));
-    this.clearMessages(); // Clear the messages array after updating the history
+    //this.clearMessages(); // Clear the messages array after updating the history
   }
   
   
@@ -179,7 +180,7 @@ class Chatbox {
     this.history.forEach((item) => {
       if (item.name === 'Sourav') {
         currentTag = item.tag;
-        //allMessagesHtml += '<h3>' + currentTag + '</h3>';
+        allMessagesHtml += '<h3>' + currentTag + '</h3>';
         allMessagesHtml += '<div class="messages__item messages__item--visitor">' + item.message + '</div>';
       } else {
         allMessagesHtml += '<div class="messages__item messages__item--operator">' + item.message + '</div>';
@@ -187,7 +188,7 @@ class Chatbox {
     }); 
   
     conversationHistoryWindow.document.write('<div class="chatbox__support chatbox--active">');
-    conversationHistoryWindow.document.write('<div class="chatbox__messages">' + '<h3>' + currentTag + '</h3>' + '</div>');
+    //conversationHistoryWindow.document.write('<div class="chatbox__messages">' + '<h3>' + currentTag + '</h3>' + '</div>');
     conversationHistoryWindow.document.write( allMessagesHtml );
     conversationHistoryWindow.document.write('</div>');
   

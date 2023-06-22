@@ -65,6 +65,7 @@ class Chatbox {
       const speechResult = event.results[event.results.length - 1][0].transcript;
       const inputField = this.args.chatBox.querySelector('input');
       inputField.value = speechResult;
+      this.onSendButton(this.args.chatBox);
     };
 
     this.recognition.onerror = (event) => {

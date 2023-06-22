@@ -6,7 +6,7 @@ The chatbot has been deployed using Flask , Javascript and NLP.
 
 Clone repo and create a virtual environment 
 ```
-$ git clone https://github.com/python-engineer/chatbot-deployment.git
+$ git clone https://github.com/sourav282/Chatbot.git
 
 $ cd chatbot-deployment
 
